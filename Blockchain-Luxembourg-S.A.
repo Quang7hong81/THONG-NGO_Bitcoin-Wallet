@@ -1,0 +1,95 @@
+# Blockchain.com
+Blockchain Luxembourg S.A.
+Copyright 2020 Google LLC.
+ SPDX-License-Identifier: Apache-2.0
+*/
+/*
+ Copyright 2005 Google LLC.
+ SPDX-License-Identifier: Apache-2.0
+*/
+new function(){};
+var vx,wx,xx=new Fw;wx=_.fg(xx,1,"me");var yx,zx=new Dw,Ax,Bx=new Bw;Ax=_.fg(Bx,1,"person.photo");yx=_.F(zx,1,Ax);var Cx;Cx=_.fg(yx,3,1);
+}catch(e){_._DumpException(e)}
+try{
+var bH=[3,5],cH=function(a){_.C.call(this,a,-1,bH)};_.q(cH,_.C);var dH=function(a){return a.A?a.A.j:"f"},eH=function(a){this.o=_.cu.ca();
+_.p("gbar.cph",fH);_.p("gbar.tcph",function(a){var b=fH();b&&_.yk(b,"gb_Ba",!a)});
+_.Ih(function(){if(_.I(_.N(),cH,16)){var a=document.querySelector(".gb_Sa"),b=_.I(_.N(),cH,16)||new cH;b=_.A(_.M(b,1),!1);b=new eH(b);a&&
+var hH=function(a,b,c,d,e){_.Nj.call(this,a,c);this.N=d;this.H=e;this.B=new eH(_.A(_.M(b,1),!1));this.J=_.cu.ca();this.C=_.T("gb_Se",this
+"click",this.Mi),this.listen(_.T("gb_cg",this.j),"click",this.ej));this.G=_.A(_.M(b,2),!1);this.L=_.A(_.M(b,4),!1);this.M=null;this.G&&(t
+
+_.h.Mi=function(){0!=this.o&&(this.o=!1,gH(this,!0))};_.h.ej=function(){1!=this.o&& (this.o=!0,gH(this,!0))};_.h.vg=function(){if(this.G){
+ var gH=function(a,b){b=b&&_.Lt();"t"==dH(aBo)?b?(_.ej(aj,["gb_eg","gb_Qa"]),_. Pt(aj),a.Ma(aj,_.Xd,aV),aD(!0),setTimeout((0,_.B)(a.
+ hH.prototype.D=function(a){a=this.o?!a:a;var b=this.j;b.style.minWidth=b.style.maxWidth=a?this.S:this.O ;b=this.C;b.style.minWidth=b.style
+ _.Ih(function(){var a=_.I(_.N(),cH,16)||new cH,b=_.T("gb_Sa");if(a&&b){var c=_ .Bg(),d=_.ji(),e=_.Ig();new hH(b,a,c,d,e);_.M(a,4)&&(c=func
+ }catch(e){_._DumpException(e)}
+ try{
+ var mw=function(a){_.y.call(this);this.F=a;this.A=null;this.j={};this.C={};this.o={}; this.B=null};_.q(mw,_.y);var nw=function(a){if(aA)r
+ _.h.Oc=function(a,b,c){this.j[a]=this.j[a]||{};this.j[a][b]=this.j[a][ b]||[];this.j[a][b].push(c)};_.h.we=function(a,b){b=b.ic();if(this.
+ _.h.xh=function(a){this.B=a;for(var b in this.o)this.o[b].Le()&&this.o[b].od(a)};_ .h.ne=function(a){this.o[a.ic()]=a};var ow=new mw(_.Bg(
+ }catch(e){_._DumpException(e)}
+ try{
+ _.uo=function(a){_.Ih(function(){var b=document.querySelector("."+a);b&&(b=b.querySelector(".gb_C"))&&_.Tc(" eq").bf(b,"click")})};
+ }catch(e){_._DumpException(e)}
+ try{
+ var vo=document.querySelector(".gb_B"),wo=RegExp("(\\s+|^)gb_Xf(\\s+|$)");vo&&!wo.test(vo.className)&&_.uo( "gb_B");
+ }catch(e){_._DumpException(e)}
+ try{
+ _.uo("gb_Na");
+ }catch(e){_._DumpException(e)}
+ })(this.gbar_);
+ // Google Inc.
+ </script><script nonce="z4anuFFc5mh4I4hsyRl39Q">
+  window['_wjdc'] = function (d) {window['_wjdd'] = d};
+  </script><meta content="IE=10" http-equiv="X-UA-Compatible"><meta content="PJKdyVFC5jlu_l8Wo_hirJkhs1cmitmn44fgpOc3zFc" name="google-
+ Blockchain is the OG cryptocurrency wallet that has tens of millions of users worldwide. You can buy, sell, hold, send, receive and earn interest
+ Blockchain.com is the most trusted platform in the world for trading in cryptocurrencies with over 71 million wallets created and over $800 billion
+ The Blockchain.com wallet has two options:
+ - Unattended version, which means only YOU control access to your crypto and private keys.
+ - A supervised version that allows you to use all our features like buying and selling, swapping between cryptocurrencies like bitcoin etc.
+ The most popular way to buy, sell and store cryptocurrencies. Unlike its competitors, the wallet gives you the benefits of
+ What's more, by using the Blockchain.com Wallet, you are supporting the crypto ecosystem by helping to ensure that the Wallet and Explorer are
+ The Blockchain Wallet gives you access to everything you could hope for in a crypto wallet. Security, Endless Features, and Experience
+ Cryptocurrencies available to buy, sell, hold, send, receive and swap:
+ Bitcoin (BTC)
+ Ethereum (ETH)
+ Bitcoin Cash (BCH)
+ Stellar (XLM)
+ ALGO (Algorand)
+ USDT (Tether)
+ USD Standard Paxos (PAX)
+ WDGLD
+ We regularly add new and exciting assets like Chainlink, Polkadot and defi token.
+ Featured:
+ * Use Simple Buy to buy top cryptocurrencies like Bitcoin and Ethereum
+ * Send and receive Bitcoin, Ethereum, Bitcoin Cash, Stellar, Algorand, Tether and USD PAX instantly to anyone, anywhere in the world
+ * Earn up to 12% interest on BTC, ETH, USDT and PAX, XLM and BCH annually. Note that different interest rates apply to each type of currency
+ * Borrow Digital USD today - Get Digital USD directly from your Blockchain Wallet, using your bitcoins as collateral
+ * Request crypto payments easily - anytime, anywhere. (including QR Code support)
+ * Simple, straightforward Swap interface makes cryptocurrency exchange fun and an easy experience.
+ * Global wallet supports 8 languages.
+ Market Access
+ * Buy and sell bitcoin seamlessly in 36 countries and swap one cryptocurrency for another at live exchange rates
+ * Real-time prices and quotes and historical price charts
+ * Track transactions and addresses with our modern block explorer
+ * All swaps settle on-chain, so they're more reliable and fraud-resistant than other swaps.
+ Guard
+ * Only you have access to your private key and crypto.
+ * Set a 4-digit pin or biometric authentication
+ * Stop the bad guys with Advanced Two-Factor Authentication
+ * Your own unique 12-word backup phrase.
+ With this app you can create a new Blockchain Wallet or pair an existing web wallet on your mobile device.
+ Download it for free today!
+ If you have any questions, our best support team is waiting to assist you at support.blockchain.com or via our Channels
+ Twitter: @Blockchain and @AskBlockchain
+ Facebook: @Blockchain
+ LinkedIn: / company / blockchain
+ Instagram: @Blockchainofficial
+ YouTube: Blockchain
+ Telegram: https://t.me/blockchain
+ VKontakte: / blockchainru
+ "><h2 aria-label="Description"></h2><div jscontroller="IsfMIf" jsaction="rcuQ6b:npT2md" class="PHBdkd" data-content-height="144" jsshadow><div
+ c.initAft=function(){f=0;e=Array.prototype.slice.call(document.getElementsByTagName("img")).filter(function(a){return!!a.getAttribute("da")
+ initAft()</script><script id="_ij" nonce="z4anuFFc5mh4I4hsyRl39Q">window.IJ_values ​​= [[null,null,"",false,true,null,null,false],'0','http
+
+#Author: Thong Ngo
+ E-mail: quangthong1011@gmail.com
