@@ -1,143 +1,66 @@
-from .main import *
-from .keystore import xpubkey_to_address
+Wallet
 
-class HDWallet(object):
+Balances:
 
-    def __init__(self, keystore, num_addresses=0, last_receiving_index=0, last_change_index=0):
-        self.coin = keystore.coin
-        self.keystore = keystore
-        self.addresses = {}
-        self.last_receiving_index = last_receiving_index
-        self.last_change_index = last_change_index
-        self.new_receiving_addresses(num=num_addresses)
-        self.new_change_addresses(num=num_addresses)
-        self.is_watching_only = self.keystore.is_watching_only()
-        if self.keystore.electrum:
-            self.script_type = self.keystore.xtype
-        else:
-            self.script_type = "p2pkh"
+  0.00 BTC ESTIMATED
 
-    def privkey(self, address, formt="wif_compressed", password=None):
-        if self.is_watching_only:
-            return
-        try:
-            addr_derivation = self.addresses[address]
-        except KeyError:
-            raise Exception(
-                "Address %s has not been generated yet. Generate new addresses with new_receiving_addresses or new_change_addresses methods" % address)
-        pk, compressed = self.keystore.get_private_key(addr_derivation, password)
-        return self.coin.encode_privkey(pk, formt, script_type=self.script_type)
+  0.00 BTC AVAILABLE
 
-    def export_privkeys(self, password=None):
-        if self.is_watching_only:
-            return
-        return {
-            'receiving': {addr: self.privkey(addr, password=password) for addr in self.receiving_addresses},
-            'change': {addr: self.privkey(addr, password=password) for addr in self.change_addresses}
-        }
+  0.00 BTC ESTIMATED_SPENDABLE
 
-    def pubkey_receiving(self, index):
-        return self.keystore.derive_pubkey(0, index)
+  0.00 BTC AVAILABLE_SPENDABLE
 
-    def pubkey_change(self, index):
-        return self.keystore.derive_pubkey(1, index)
+Transactions:
 
-    def pubtoaddr(self, pubkey):
-        if self.keystore.xtype == "p2pkh":
-            return self.coin.pubtoaddr(pubkey)
-        elif self.keystore.xtype == "p2wpkh":
-            return self.coin.pubtosegwit(pubkey)
-        elif self.keystore.xtype == "p2wpkh-p2sh":
-            return self.coin.pubtop2w(pubkey)
+  0 pending
 
-    def receiving_address(self, index):
-        pubkey = self.pubkey_receiving(index)
-        address = self.pubtoaddr(pubkey)
-        self.addresses[address] = (0, index)
-        return address
+  0 unspent
 
-    def change_address(self, index):
-        pubkey = self.pubkey_change(index)
-        address = self.pubtoaddr(pubkey)
-        self.addresses[address] = (1, index)
-        return address
+  0 spent
 
-    @property
-    def receiving_addresses(self):
-        return [addr for addr in self.addresses.keys() if not self.addresses[addr][0]]
+  0 dead
 
-    @property
-    def change_addresses(self):
-        return [addr for addr in self.addresses.keys() if self.addresses[addr][0]]
+Last seen best block: 694151 (2021-08-04T10:45:16Z): 00000000000000000005a2d10e452b45f2bc07a840b0cd18c060770a6a82b0ef
 
-    def new_receiving_address_range(self, num):
-        index = self.last_receiving_index
-        return range(index, index+num)
+Keys:
 
-    def new_change_address_range(self, num):
-        index = self.last_change_index
-        return range(index, index+num)
+Earliest creation time: 2021-08-15T06:07:40Z
 
-    def new_receiving_addresses(self, num=10):
-        addresses = list(map(self.receiving_address, self.new_receiving_address_range(num)))
-        self.last_receiving_index += num
-        return addresses
+Seed birthday:     1629007660  [2021-08-15T06:07:40Z]
 
-    def new_change_addresses(self, num=10):
-        addresses = list(map(self.change_address, self.new_change_address_range(num)))
-        self.last_change_index += num
-        return addresses
+Ouput script type: P2PKH
 
-    def new_receiving_address(self):
-        return self.new_receiving_addresses(num=1)[0]
+Key to watch:      xpub69Z6exaF8Mb9i425qtDdysNWwyjrARiFuf2V1HdJHZMtsRQMzBv5zfkZt8sakBFwVkf61AXC9gbGjPD3bcBiFBrXwhnF5DqEFaVhxM6voNg
 
-    def new_change_address(self):
-        return self.new_change_addresses(num=1)[0]
+Lookahead siz/thr: 100/33
 
-    def balance(self):
-        raise NotImplementedError
+  addr:1Mf8cQRYSVrB21dzj2r5AMeuaMBVhfYAxV  hash160:e298acd1b49f411713fe1a3b9b76b3d0f6bb2b3a  (M, root)
 
-    def unspent(self):
-        raise NotImplementedError
+  addr:14RBN461T7sgyEeo7ZkffD61RBQGdJmESS  hash160:257b02d22ff54e1ff914ae16989a0c0cf810013a  (M/0H, account)
 
-    def select(self):
-        raise NotImplementedError
+  addr:1JugRHRPJEoxPJRoEjPyXZaU84fiqwvM7o  hash160:c470ac634114b5be2da7af9e2eca55f623f4de64  (M/0H/0, external)
 
-    def history(self):
-        raise NotImplementedError
+  addr:149jwP57bJYLLf5CtCaobKq1W4dmw2UPkB  hash160:228f8c2bed48a40865d78ff4c75ed8287471cb46  (M/0H/1, internal)
 
-    def sign(self, tx, password=None):
-        if self.is_watching_only:
-            return
-        raise NotImplementedError
+  addr:1UcUcnBBdsZp7GpubNCkmrXjBj4ZRLKwU  hash160:0538d84fec5e3fa3e140558fde8b48623c3062e6  (M/0H/0/0)
 
-    def mksend(self, outs):
-        raise NotImplementedError
+Seed birthday:     1629007660  [2021-08-15T06:07:40Z]
 
-    def sign_message(self, message, address, password=None):
-        if self.is_watching_only:
-            return
-        raise NotImplementedError
+Ouput script type: P2WPKH
 
-    def is_mine(self, address):
-        return address in self.addresses.keys()
+Key to watch:      zpub6oDdGHv5Rig7VHcnEBeqUoLn5o7WHL67B9MKXWYHvEdjnAH7pk3PiwWLAJ7waxtuKoTR8vVX19QyKQsSZ1AApL5j1mYivZFdZh2MRURonA5
 
-    def is_change(self, address):
-        return address in self.change_addresses
+Lookahead siz/thr: 100/33
 
-    def account(self, address, password=None):
-        derivation = self.addresses[address][0]
-        privkey = self.privkey(address, formt="wif_compressed", password=password)
-        pub = self.coin.privtopub(privkey)
-        derivation = "%s/%s'/%s" % (self.keystore.root_derivation, derivation[0], derivation[1])
-        return (derivation, privkey, pub, address)
+  addr:bc1qu2v2e5d5naq3wyl7rgaeka4n6rmtk2e6qp48c4  hash160:e298acd1b49f411713fe1a3b9b76b3d0f6bb2b3a  (M, root)
 
-    def details(self, password=None):
-        return {
-            'type': "%s %s" % ("Electrum" if self.keystore.electrum else "BIP39", self.keystore.xtype),
-            'xkeys': (self.keystore.root_derivation, self.keystore.xpriv, self.keystore.xpub),
-            'xreceiving': (),
-            'xchange': (),
-            'receiving': [self.account(a, password=password) for a in self.receiving_addresses],
-            'change': [self.account(a, password=password) for a in self.change_addresses]
-        }
+  addr:bc1qsgv5p5rtn0l54ew0uuus8nf05skpnaghvxh0s0  hash160:821940d06b9bff4ae5cfe73903cd2fa42c19f517  (M/1H, account)
+
+  addr:bc1q9028kvme4ph06nr3awsdysh5vplumgj0w9xf2m  hash160:2bd47b3379a86efd4c71eba0d242f4607fcda24f  (M/1H/0, external)
+
+  addr:bc1qjm9exug9w4rd0rqffjy3xrnhpz6zecehsdlvkj  hash160:96cb9371057546d78c094c89130e7708b42ce337  (M/1H/1, internal)
+
+  addr:bc1qq6w0u8s5khu36xfdj4ahg295targtycd7k2hf8  hash160:069cfe1e14b5f91d192d957b7428b45f4685930d  (M/1H/0/0)
+
+  addr:bc1qqcsar25zn5qsynymym8dfehe6y5c56rnh8shz3  hash160:0621d1aa829d01024c9b26ced4e6f9d1298a6873  (M/1H/0/1)
+        
